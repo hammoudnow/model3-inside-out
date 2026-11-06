@@ -1,9 +1,9 @@
 import {createCityRide} from './city-ride.js';
 import {motionAt,powerRoutes} from './energy-model.mjs';
 import * as THREE from 'three';
-import {OrbitControls} from './vendor/OrbitControls.js';
-import {GLTFLoader} from './vendor/GLTFLoader.js';
-import {RoomEnvironment} from './vendor/RoomEnvironment.js';
+import {OrbitControls} from './OrbitControls.js';
+import {GLTFLoader} from './GLTFLoader.js';
+import {RoomEnvironment} from './RoomEnvironment.js';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const filmRender=false;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -145,7 +145,7 @@ function trianglesToGroups(mesh){
  // Exterior wheels are not drawn twice: the schematic wheel groups carry the lower layer.
 }
 async function load(){try{
- const gltf=await new GLTFLoader().loadAsync('./assets/model3.glb',e=>{if(e.total)$('#loading-detail').textContent=`Loading geometry · ${Math.round(100*e.loaded/e.total)}%`});
+ const gltf=await new GLTFLoader().loadAsync('./model3.glb',e=>{if(e.total)$('#loading-detail').textContent=`Loading geometry · ${Math.round(100*e.loaded/e.total)}%`});
  const root=gltf.scene;scene.add(root);root.updateMatrixWorld(true);let box=new THREE.Box3().setFromObject(root),size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());const scale=4.72/size.x;
  root.scale.multiplyScalar(scale);root.position.sub(center.multiplyScalar(scale));root.position.y+=size.y*scale/2+.025;root.updateMatrixWorld(true);
  layers.cabin.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});layers.cabin.clear();

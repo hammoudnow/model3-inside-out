@@ -28,8 +28,8 @@ GitHub Pages can serve the repository root from the `main` branch. The `.nojekyl
 
 ## Attribution
 
-- “2024 Tesla Model 3” by **RBLXSupercars**, CC BY 4.0. See [asset credits](assets/CREDITS.md) for the source, uploader and modifications.
-- Three.js: [MIT license](vendor/LICENSE-three.txt).
-- Instrument Sans: [SIL Open Font License](assets/OFL-InstrumentSans.txt).
+- “2024 Tesla Model 3” by **RBLXSupercars**, CC BY 4.0. See [asset credits](CREDITS.md) for the source, uploader and modifications.
+- Three.js: [MIT license](LICENSE-three.txt).
+- Instrument Sans: [SIL Open Font License](OFL-InstrumentSans.txt).
 
 The city scenery and illustrative internal systems were made with code. Recording frames, video exports, local machine files and publishing credentials are excluded from this repository.
